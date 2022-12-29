@@ -78,8 +78,10 @@
                 editor: editor,
                 addons: {
                     images: {
-                        fileUploadOptions: {
-                            url: 'upload.php'
+                        actions: {
+                            fileAdded: function() {
+                                return Promise.resolve("img\\embed.png");
+                            }
                         }
                     }
                 }
