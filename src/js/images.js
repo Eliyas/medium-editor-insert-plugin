@@ -295,7 +295,7 @@
                         });
                         if (that.options.actions.fileAdded) {
                             that.options.actions.fileAdded(e, data)
-                                .then(function(src) {
+                                .then(function (src) {
                                     $.proxy(that, 'showImage', src, data)();
                                 });
                         }

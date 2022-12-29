@@ -1871,6 +1871,12 @@ this["MediumInsert"]["Templates"]["src/js/templates/images-toolbar.hbs"] = Handl
                         setTimeout(function () {
                             window.URL.revokeObjectURL(this.src);
                         });
+                        if (that.options.actions.fileAdded) {
+                            that.options.actions.fileAdded(e, data)
+                                .then(function (src) {
+                                    $.proxy(that, 'showImage', src, data)();
+                                });
+                        }
                     };
                 } else {
                     data.submit();
